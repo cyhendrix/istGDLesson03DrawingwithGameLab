@@ -151,7 +151,7 @@ for(const [key,questions,target] of [['apply',apply,'applyQs'],['debug',debug,'d
 document.getElementById('review').onclick=()=>show('identify');
 document.getElementById('reset').onclick=()=>{if(!state.submitted||!state.receipt)return;if(submissionPending){alert('Please wait for the submission to finish before resetting.');return}if(!confirm('Clear all saved answers and start over? This does not remove any grade already recorded in your teacher’s spreadsheet.'))return;localStorage.removeItem(STORE);location.reload()};
 
-const SUBMISSION_READY=false;
+const SUBMISSION_READY=true;
 let submissionPending=false,submissionTimer=null,submissionFrame=null;
 if(!state.receipt)state.submitted=false;
 function syncSubmission(){
